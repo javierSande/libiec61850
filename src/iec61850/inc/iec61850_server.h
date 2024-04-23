@@ -1035,6 +1035,21 @@ LIB61850_API void
 IedServer_updateFloatAttributeValue(IedServer self, DataAttribute* dataAttribute, float value);
 
 /**
+ * \brief Update the value of an IEC 61850 integer16 data attribute.
+ *
+ * Update the value of a integer data attribute without handling with MmsValue instances.
+ *
+ * This function will also check if a trigger condition is satisfied in the case when a report or GOOSE
+ * control block is enabled.
+ *
+ * \param self the instance of IedServer to operate on.
+ * \param dataAttribute the data attribute handle
+ * \param value the new integer value of the data attribute.
+ */
+LIB61850_API void
+IedServer_updateInt16AttributeValue(IedServer self, DataAttribute* dataAttribute, int16_t value);
+
+/**
  * \brief Update the value of an IEC 61850 integer32 data attribute.
  *
  * Update the value of a integer data attribute without handling with MmsValue instances.

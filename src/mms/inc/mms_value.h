@@ -145,6 +145,16 @@ LIB61850_API int64_t
 MmsValue_toInt64(const MmsValue* self);
 
 /**
+ * \brief Get the int16_t value of a MmsValue object.
+ *
+ * \param self MmsValue instance to operate on. Has to be of a type MMS_INTEGER or MMS_UNSIGNED
+ *
+ * \return signed 32 bit integer
+ */
+LIB61850_API int16_t
+MmsValue_toInt16(const MmsValue* value);
+
+/**
  * \brief Get the int32_t value of a MmsValue object.
  *
  * \param self MmsValue instance to operate on. Has to be of a type MMS_INTEGER or MMS_UNSIGNED

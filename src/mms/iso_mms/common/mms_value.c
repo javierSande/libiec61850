@@ -944,6 +944,20 @@ MmsValue_newIntegerFromInt64(int64_t integer)
 }
 
 /**
+ * Convert signed integer to int16_t
+ */
+int16_t
+MmsValue_toInt16(const MmsValue* self)
+{
+    int32_t integerValue = 0;
+
+    if ((self->type == MMS_INTEGER) || (self->type == MMS_UNSIGNED))
+        BerInteger_toInt32(self->value.integer, &integerValue);
+
+    return integerValue;
+}
+
+/**
  * Convert signed integer to int32_t
  */
 int32_t

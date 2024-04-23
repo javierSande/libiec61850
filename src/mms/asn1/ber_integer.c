@@ -204,6 +204,21 @@ BerInteger_createFromInt64(int64_t value)
 }
 
 void
+BerInteger_toInt16(Asn1PrimitiveValue* self, int16_t* nativeValue)
+{
+    uint8_t* buf = self->octets;
+    int i;
+
+    if (buf[0] & 0x80) /* sign extension */
+        *nativeValue = 0xffffffff;
+    else
+        *nativeValue = 0;
+
+    for (i = 0; i < self->size; i++)
+        *nativeValue = (*nativeValue << 8) | buf[i];
+}
+
+void
 BerInteger_toInt32(Asn1PrimitiveValue* self, int32_t* nativeValue)
 {
     uint8_t* buf = self->octets;

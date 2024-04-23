@@ -67,6 +67,9 @@ LIB61850_INTERNAL int
 BerInteger_setInt64(Asn1PrimitiveValue* self, int64_t value);
 
 LIB61850_INTERNAL void
+BerInteger_toInt16(Asn1PrimitiveValue* self, int16_t* nativeValue);
+
+LIB61850_INTERNAL void
 BerInteger_toInt32(Asn1PrimitiveValue* self, int32_t* nativeValue);
 
 LIB61850_INTERNAL void
